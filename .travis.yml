@@ -15,10 +15,10 @@ before_install:
   - gcloud config set compute/zone asia-southeast1-a
   - gcloud container clusters get-credentials cluster-1
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t theanha5/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t anhnt2310/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true theanha5/react-test npm test 
+  - docker run -e CI=true anhnt2310/react-test npm test 
   
 deploy:
   provider: script
